@@ -23,4 +23,5 @@ jobs:
               run: |
                 echo "hi"
                 echo "${{inputs.version}}"
+                echo "my variables is ${{vars.MY_DEV_USER}}"
 
