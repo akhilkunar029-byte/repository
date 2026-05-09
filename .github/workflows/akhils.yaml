@@ -14,11 +14,14 @@ on:
                     - v2
                     - v3
                 default: v1
+            myenv:
+                type: environment
+                default: Dev
 
 jobs:
     myjob:
         runs-on: ubuntu-latest
-        environment: Dev
+        environment: ${{inputs.myenv}}
         steps:
             - name: step1
               run: |
