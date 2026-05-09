@@ -18,6 +18,7 @@ on:
 jobs:
     myjob:
         runs-on: ubuntu-latest
+        environment: Dev
         steps:
             - name: step1
               run: |
