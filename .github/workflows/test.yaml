@@ -14,7 +14,7 @@ jobs:
             - name: step1
               id: ak
               run: |
-                echo"akhil=kumar" >> "$GITHUB_OUTPUT"
+                echo"name=kumar" >> "$GITHUB_OUTPUT"
                 echo"job=devops" >> "$GITHUB_OUTPUT"
     
     job2: 
@@ -23,6 +23,5 @@ jobs:
 
         steps:
             - name: step2
-              id: pk
               run: |
                 echo"${{needs.job1.outputs.css1}}"
