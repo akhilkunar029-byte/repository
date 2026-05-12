@@ -1,0 +1,34 @@
+name: Outputs and Needs Example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  job1:
+    runs-on: ubuntu-latest
+
+    outputs:
+      username: ${{ steps.user.outputs.name }}
+      role: ${{ steps.role.outputs.job }}
+
+    steps:
+      - name: Set Username
+        id: user
+        run: echo "name=akhil" >> $GITHUB_OUTPUT
+
+      - name: Set Job Role
+        id: role
+        run: echo "job=devops" >> $GITHUB_OUTPUT
+
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Outputs
+        run: |
+          echo "User Name: ${{ needs.job1.outputs.username }}"
+          echo "Job Role : ${{ needs.job1.outputs.role }}"
