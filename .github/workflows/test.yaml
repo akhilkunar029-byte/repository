@@ -26,4 +26,4 @@ jobs:
             - name: step2
               run: |
                 echo"${{needs.job1.outputs.css1}}"
-                echo "${{needs.job1.outputs.css2}}"
+                echo"${{needs.job1.outputs.css2}}"
