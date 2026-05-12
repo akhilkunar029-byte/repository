@@ -9,7 +9,7 @@ jobs:
         runs-on: ubuntu-latest
         outputs:
             username: ${{steps.ak.outputs.name}}
-            role: ${{steps.pk.outputs.job}}
+            job: ${{steps.pk.outputs.job}}
 
         steps:
             - name: step1
