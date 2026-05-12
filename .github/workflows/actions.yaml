@@ -9,7 +9,7 @@ jobs:
 
         - name: creating a file
           run: |
-            echo "helllo how r u" >> 'pathans.txt'
+            echo "helllo how r u" >> 'akhil.txt'
 
         - name: uploding the artifact 
           uses: actions/upload-artifact@v7
