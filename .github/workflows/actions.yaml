@@ -14,5 +14,18 @@ jobs:
         - name: uploding the artifact 
           uses: actions/upload-artifact@v7
           with:
-            name: akhil
+            name: kumar
             path: akhil.txt
+
+    job2:
+        runs-on: ubuntu-latest
+        needs: job1
+        steps:
+          - name: download the artifact
+            uses: actions/download-artifact@v8
+            with:
+              name: kumar
+              path: akhil.txt
+          - name: printing the file
+            run: |
+              cat akhil.txt
