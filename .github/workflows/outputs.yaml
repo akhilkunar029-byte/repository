@@ -1,9 +1,7 @@
 name: Outputs and Needs Example
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch: 
 
 jobs:
 

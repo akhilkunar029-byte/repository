@@ -1,0 +1,18 @@
+name: custom actions
+on: 
+    workflow_dispatch: 
+
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+
+        - name: creating a file
+          run: |
+            echo "helllo how r u" >> 'pathans.txt'
+
+        - name: uploding the artifact 
+          uses: actions/upload-artifact@v7
+          with:
+            name: akhil
+            path: akhil.txt

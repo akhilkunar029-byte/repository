@@ -1,8 +1,7 @@
 name: pathans-lab
 
 on:
- push:
-   branches: main
+ workflow_dispatch: 
 
 jobs:
   job1:
