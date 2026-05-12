@@ -31,4 +31,4 @@ jobs:
               path: pathans
           - name: printing the file
             run: |
-              cat /akhil.txt
+              cat akhil.txt
