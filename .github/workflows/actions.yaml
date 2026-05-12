@@ -25,7 +25,7 @@ jobs:
             uses: actions/download-artifact@v8
             with:
               name: kumar
-              path: akhil.txt
+              path: .
           - name: printing the file
             run: |
               cat akhil.txt
