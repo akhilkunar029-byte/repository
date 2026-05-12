@@ -20,12 +20,15 @@ jobs:
     job2:
         runs-on: ubuntu-latest
         needs: job1
+        defaults:
+          run:
+            working-directory: pathans
         steps:
           - name: download the artifact
             uses: actions/download-artifact@v8
             with:
               name: kumar
-              path: .
+              path: pathans
           - name: printing the file
             run: |
-              cat akhil.txt
+              cat /akhil.txt
