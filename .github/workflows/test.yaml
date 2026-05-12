@@ -9,7 +9,7 @@ jobs:
         runs-on: ubuntu-latest
         outputs:
             username: ${{steps.ak.outputs.name}}
-            job: ${{steps.pk.outputs.job}}
+            role: ${{steps.pk.outputs.job}}
 
         steps:
             - name: step1
@@ -27,5 +27,5 @@ jobs:
         steps:
             - name: Print outputs
               run: |
-                echo "${{needs.job1.outputs.username}}"
-                echo "${{needs.job1.outputs.job}}"
+                echo "username: ${{needs.job1.outputs.username}}"
+                echo "job role: ${{needs.job1.outputs.job}}"
