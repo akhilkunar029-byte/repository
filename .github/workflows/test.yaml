@@ -14,8 +14,8 @@ jobs:
             - name: step1
               id: ak
               run: |
-                echo"name=kumar" >> "$GITHUB_OUTPUT"
-                echo"job=devops" >> "$GITHUB_OUTPUT"
+                echo "name=kumar" >> "$GITHUB_OUTPUT"
+                echo "job=devops" >> "$GITHUB_OUTPUT"
     
     job2: 
         runs-on: ubuntu-latest
