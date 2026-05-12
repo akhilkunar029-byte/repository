@@ -9,6 +9,7 @@ jobs:
         runs-on: ubuntu-latest
         outputs:
             css1: ${{steps.ak.outputs.name}}
+            css2: ${{steps.ak.outputs.job}}
 
         steps:
             - name: step1
@@ -25,3 +26,4 @@ jobs:
             - name: step2
               run: |
                 echo"${{needs.job1.outputs.css1}}"
+                echo "${{needs.job1.outputs.css2}}"
