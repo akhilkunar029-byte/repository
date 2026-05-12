@@ -8,20 +8,24 @@ jobs:
     job1: 
         runs-on: ubuntu-latest
         outputs:
-            css1: ${{steps.ak.outputs.name}}
+            username: ${{steps.ak.outputs.name}}
+            job: ${{steps.pk.outputs.job}}
 
         steps:
             - name: step1
               id: ak
-              run: |
-                echo "name=kumar" >> "$GITHUB_OUTPUT"
-                echo "job=devops" >> "$GITHUB_OUTPUT"
+              run: echo "name=kumar" >> "$GITHUB_OUTPUT"
+
+            - name: step2
+              id: pk
+              run: echo "job=devops" >> "$GITHUB_OUTPUT"
     
     job2: 
         runs-on: ubuntu-latest
         needs: job1
 
         steps:
-            - name: step2
+            - name: Print outputs
               run: |
-                echo"${{needs.job1.outputs.css1}}"
+                echo "${{needs.job1.outputs.username}}"
+                echo "${{needs.job1.outputs.job}}"
